@@ -37,3 +37,30 @@ body{
     border-radius: 25px;
     border: 2px solid darkgreen;
 }
+
+
+.difficulty-btn{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 25px;
+
+}
+
+.startb{
+    margin-top: 70px;
+}
+
+h3{
+    margin-top: 50px;
+}
+
+main{
+    border: 5px solid goldenrod;
+    border-radius: 25px;
+    padding: 70px;
+    margin-right: 10px;
+    box-shadow: 4px 4px black;
+}

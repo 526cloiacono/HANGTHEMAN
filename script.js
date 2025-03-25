@@ -154,6 +154,13 @@ function endGame(won){
 
     
 }
+//enter key event listener 
+document.getElementById('letterInput').addEventListener('keydown', function(event){
+    if (event.key === 'Enter'){
+        guessLetter()
+    }
+})
+
 function restartGame (){
-    location.reload
+    location.reload()
 }
