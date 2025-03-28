@@ -6,12 +6,8 @@ let responseImg = document.getElementById('response-img')
 let responseText = document.getElementById('response-text')
 let greeting = document.getElementById('greeting')
 
-
 userName ? document.getElementById('greeting').innerText=` Welcome ${userName} follow the instructions to play!` 
 : document.getElementById('greeting').innerText='Anonymous!'
-
-
-
 
 
 
