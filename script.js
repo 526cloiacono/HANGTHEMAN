@@ -1,3 +1,21 @@
+
+//start of name
+let userName = prompt("Hello, What is your name?")
+
+let responseImg = document.getElementById('response-img')
+let responseText = document.getElementById('response-text')
+let greeting = document.getElementById('greeting')
+
+
+userName ? document.getElementById('greeting').innerText=` Welcome ${userName} follow the instructions to play!` 
+: document.getElementById('greeting').innerText='Anonymous!'
+
+
+
+
+
+
+
 // Word List
 const wordList = [
     'gold',
@@ -21,6 +39,12 @@ let wrongGuesses = 0
 let guessedLetters = []
 const maxMistakes = 6
 
+
+// win and lose sound 
+const winSound = new Audio('sounds/winSound.mp3')
+const loseSound = new Audio('sounds/loseSound.mp3')
+const wrongGuess = new Audio('sounds/wrong guess.mp3')
+const rightGuess = new Audio('sounds/rightGuess.mp3')
 //start game function
 function startGame(level) {
     //reset game
@@ -117,6 +141,7 @@ function guessLetter () {
 
 function updateWrongGuess (guessedLetter) {
     wrongGuesses++
+
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
     //document.getElementById('shamrock').src = `imgs/shamrock${6-wrongGuesses}.jpg`
 
@@ -152,7 +177,11 @@ function endGame(won){
         alert(`YOU LOST THE WORD WAS ${selectedWord}` )
     }
 
-    
+    if(won){
+        winSound.play()
+    }else{
+        loseSound.play()
+    }
 }
 //enter key event listener 
 document.getElementById('letterInput').addEventListener('keydown', function(event){
@@ -161,6 +190,18 @@ document.getElementById('letterInput').addEventListener('keydown', function(even
     }
 })
 
-function restartGame (){
-    location.reload()
+function restartGame() {
+    wrongGuesses = 0
+    selectedWord = ''
+    displayedWord = ''
+    guessedLetters = ''
+    wrongLetters = ''
+        document.getElementById('wrongLetters').textContent = `Wrong Letters:`
+    document.getElementById('letterInput').value = ''
+    document.getElementById('difficultySelection').classList.remove('d-none')
+    document.getElementById('difficultySelection').classList.remove('d-none')
+    document.getElementById('gameArea').classList.add('d-none')
+    document.getElementById('gameArea').classList.add('d-none')
+    document.getElementById('difficultyBox').classList.add('d-none')
+
 }
