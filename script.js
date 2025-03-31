@@ -34,7 +34,16 @@ let displayedWord = ''
 let wrongGuesses = 0
 let guessedLetters = []
 const maxMistakes = 6
+let winTotal = 0
+let loseTotal = 0
 
+const scoreboard = document.getElementById('scoreboard')
+
+const updateScoreboard = () => {
+    if (scoreboard) {
+        scoreboard.innerHTML = `Wins: ${winTotal} | Losses: ${loseTotal}`
+    }
+}
 
 // win and lose sound 
 const winSound = new Audio('sounds/winSound.mp3')
@@ -139,7 +148,7 @@ function updateWrongGuess (guessedLetter) {
     wrongGuesses++
 
     document.getElementById('wrongLetters').textContent += `${guessedLetter}`
-    //document.getElementById('shamrock').src = `imgs/shamrock${6-wrongGuesses}.jpg`
+    document.getElementById('shamrock').src = `imgs/shamrock${6-wrongGuesses}.jpg`
 
     if (wrongGuesses === maxMistakes) {
         endGame(false)
@@ -175,8 +184,12 @@ function endGame(won){
 
     if(won){
         winSound.play()
+        winTotal++
+        updateScoreboard()
     }else{
         loseSound.play()
+        loseTotal++
+        updateScoreboard()
     }
 }
 //enter key event listener 
@@ -199,5 +212,4 @@ function restartGame() {
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('difficultyBox').classList.add('d-none')
-
 }
