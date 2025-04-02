@@ -8,11 +8,11 @@ h1{
     text-shadow: 3px 3px goldenrod;
    
 }
-body{
+html, body{
     background-image: linear-gradient(green, lightgreen);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -60,7 +60,7 @@ h3{
 main{
     border: 5px solid goldenrod;
     border-radius: 25px;
-    padding: 70px;
+    padding: 40px;
     margin-right: 10px;
     box-shadow: 4px 4px black;
 }
@@ -73,4 +73,10 @@ main{
     color: black;
     font-size: 50px;
     text-shadow: 2px 2px goldenrod;
+}
+
+#shamrock{
+    border-radius: 35px;
+    border: 5px solid goldenrod;
+    box-shadow: 4px 4px black;
 }

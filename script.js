@@ -205,6 +205,7 @@ function restartGame() {
     displayedWord = ''
     guessedLetters = ''
     wrongLetters = ''
+    document.getElementById('shamrock').src = `imgs/shamrock6.jpg`
         document.getElementById('wrongLetters').textContent = `Wrong Letters:`
     document.getElementById('letterInput').value = ''
     document.getElementById('difficultySelection').classList.remove('d-none')
@@ -213,3 +214,4 @@ function restartGame() {
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('difficultyBox').classList.add('d-none')
 }
+
