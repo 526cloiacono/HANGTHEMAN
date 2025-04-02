@@ -175,18 +175,18 @@ function updateCorrectGuess(guessedLetter) {
 }
 
 function endGame(won){
-   
-    if (won){
-        alert('Congrats you win!')
-    } else {
-        alert(`YOU LOST THE WORD WAS ${selectedWord}` )
-    }
+
 
     if(won){
+        document.getElementById('right').classList.remove('d-none')
+        document.getElementById('right').classList.add('d-block')
         winSound.play()
         winTotal++
         updateScoreboard()
     }else{
+        document.getElementById('wrong').textContent +=`${selectedWord}`
+        document.getElementById('wrong').classList.remove('d-none')
+        document.getElementById('wrong').classList.add('d-block')
         loseSound.play()
         loseTotal++
         updateScoreboard()
@@ -213,5 +213,8 @@ function restartGame() {
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('difficultyBox').classList.add('d-none')
+    document.getElementById('right').classList.add('d-none')
+    document.getElementById('wrong').classList.add('d-none')
+
 }
 
