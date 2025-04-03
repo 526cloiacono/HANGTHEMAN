@@ -7,7 +7,6 @@ h1{
     font-size: 100px; 
     text-shadow: 3px 3px goldenrod;
 }
-
 html, body{
     background-image: linear-gradient(green, lightgreen);
     background-repeat: no-repeat;
