@@ -184,7 +184,7 @@ function endGame(won){
         winTotal++
         updateScoreboard()
     }else{
-        document.getElementById('wrong').textContent +=`${selectedWord}`
+     document.getElementById('wrong').textContent = `You lost! Kilgore gets no gold. Word was: ${selectedWord}`
         document.getElementById('wrong').classList.remove('d-none')
         document.getElementById('wrong').classList.add('d-block')
         loseSound.play()
@@ -217,4 +217,3 @@ function restartGame() {
     document.getElementById('wrong').classList.add('d-none')
 
 }
-
