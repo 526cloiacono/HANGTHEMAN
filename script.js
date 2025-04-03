@@ -178,8 +178,8 @@ function endGame(won){
 
 
     if(won){
-        document.getElementById('right').classList.remove('d-none')
-        document.getElementById('right').classList.add('d-block')
+        document.getElementById('good').classList.remove('d-none')
+        document.getElementById('good').classList.add('d-block')
         winSound.play()
         winTotal++
         updateScoreboard()
@@ -213,7 +213,7 @@ function restartGame() {
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('gameArea').classList.add('d-none')
     document.getElementById('difficultyBox').classList.add('d-none')
-    document.getElementById('right').classList.add('d-none')
+    document.getElementById('good').classList.add('d-none')
     document.getElementById('wrong').classList.add('d-none')
 
 }
